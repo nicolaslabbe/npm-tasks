@@ -1,0 +1,54 @@
+{
+  "name": "playground",
+  "version": "1.0.0",
+  "description": "playground npm",
+  "main": "build.js",
+  "scripts": {
+    "serve": "node tasks/serve.js ./public 8000",
+    "sync": "./node_modules/.bin/browser-sync start --port 8000 --server public --files \"public/css/styles.css, public/scripts/bundle.js, public/*.html\"",
+    "build:css": "node tasks/css.js ./src/css/styles.css ./public/css/styles.css",
+    "build:js": "node tasks/babel.js ./src/scripts/scripts.js ./public/scripts/bundle.js",
+    "build:sprites": "node tasks/sprite.js /src/sprites/ /src/assets/images/sprites.png alt-diagonal",
+    "build:images": "node tasks/image.js ./src/assets/images/ ./public/assets/images/",
+    "build": "./node_modules/.bin/parallelshell 'npm run build:css' 'npm run build:js' 'npm run build:sprites' 'npm run build:images'",
+    "build:production": "NODE_ENV=prod npm run build",
+    "livereload": "./node_modules/.bin/live-reload --port 9091 public/",
+    "watch:css": "./node_modules/.bin/watch 'npm run build:css' ./src/css/",
+    "watch:js": "./node_modules/.bin/watch 'npm run build:js' ./src/scripts/",
+    "watch:sprites": "./node_modules/.bin/watch 'npm run build:sprites' ./src/sprites/",
+    "watch:images": "./node_modules/.bin/watch 'npm run build:images' ./src/assets/images/",
+    "watch:dev:serve": "./node_modules/.bin/parallelshell 'npm run serve' 'npm run watch:css' 'npm run watch:js' 'npm run watch:sprites' 'npm run watch:images' 'npm run livereload'",
+    "watch:dev:sync": "./node_modules/.bin/parallelshell 'npm run sync' 'npm run watch:css' 'npm run watch:js' 'npm run watch:sprites' 'npm run watch:images'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdFabConnect/quickburger.git"
+  },
+  "keywords": [
+    "playground",
+    "npm"
+  ],
+  "author": "Adfab - nicolas labbé",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdFabConnect/quickburger/issues"
+  },
+  "homepage": "https://github.com/AdFabConnect/quickburger#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.0.3",
+    "babelify": "^6.3.0",
+    "browser-sync": "^2.9.10",
+    "cli-color": "^1.0.0",
+    "cssnano": "^3.3.0",
+    "cssnext": "^1.8.4",
+    "fs-readdir-recursive": "^1.0.0",
+    "imagemin": "^3.2.0",
+    "live-reload": "^1.1.0",
+    "node-static": "^0.7.7",
+    "parallelshell": "^2.0.0",
+    "postcss": "^5.0.9",
+    "prettyjson": "^1.1.3",
+    "spritesmith": "^1.4.0",
+    "watch": "^0.16.0"
+  }
+}
