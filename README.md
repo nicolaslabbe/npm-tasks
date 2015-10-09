@@ -1,4 +1,4 @@
-# quickburger
+# Npm-tasks
 
 ## Tasks
 

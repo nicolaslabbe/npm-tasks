@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AdFabConnect/quickburger.git"
+    "url": "git+https://github.com/nicolaslabbe/npm-tasks.git"
   },
   "keywords": [
     "playground",
@@ -31,9 +31,9 @@
   "author": "Adfab - nicolas labbé",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AdFabConnect/quickburger/issues"
+    "url": "https://github.com/nicolaslabbe/npm-tasks/issues"
   },
-  "homepage": "https://github.com/AdFabConnect/quickburger#readme",
+  "homepage": "https://github.com/nicolaslabbe/npm-tasks#readme",
   "devDependencies": {
     "autoprefixer": "^6.0.3",
     "babelify": "^6.3.0",
